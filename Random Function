@@ -1,1 +1,31 @@
+ int *Random(struct players p[] )  
+  {
+   int arr[ Total_batsman];
+   int i ;
+    double distance_x , distance_y , distance_z , distance_a , distance_b , distance;
+ 
+   int randomIndex   = rand() % Total_batsman;
+  
+   int randomValue   = p[randomIndex].total_runs;
+   int randomValue_1 = p[randomIndex].out;
+   int randomValue_2 = p[randomIndex].numberofballs;
+   int randomValue_3 = p[randomIndex].average;
+   int randomValue_4 = p[randomIndex].strikerate;
+   int Runs          = randomValue;
+   int Out           = randomValue_1;
+   int Balls         = randomValue_2;
+   int Avg           = randomValue_3;
+   int Strike        = randomValue_4;
+   for(i=1;i< Total_batsman;i++)
+   {
+   distance_x = (Runs - p[i].total_runs) * (Runs - p[i].total_runs);
+   distance_y = (Out - p[i].out) * (Out - p[i].out);
+   distance_z = (Balls - p[i].numberofballs) * (Balls - p[i].numberofballs);
+   distance_a = (Avg - p[i].average) * (Avg - p[i].average);
+   distance_b = (Strike - p[i].strikerate) * (Strike - p[i].strikerate);
+   distance = distance_x + distance_y + distance_z + distance_a + distance_b;  
+   arr[i] = (sqrt(distance));
 
+}
+return arr;
+}
