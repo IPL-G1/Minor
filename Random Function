@@ -1,7 +1,7 @@
  int *Random(struct players p[] )  
   {
    int arr[ Total_batsman];
-   int i ;
+   int i;
     double distance_x , distance_y , distance_z , distance_a , distance_b , distance;
  
    int randomIndex   = rand() % Total_batsman;
