@@ -28,8 +28,8 @@ int main()
 struct match m[N];
 
 int i;
-int j;
 
+int j;
 
 char Team[50];
 char stadium[70];
