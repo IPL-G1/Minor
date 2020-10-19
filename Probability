@@ -19,7 +19,28 @@ char venue[100];
 int id;
 };
 
-
+void output(int count1,int count2,int count3)
+                {
+                int mwon=count1;
+				int mlose=count2;
+				int totalm=count3;	
+				float w1 = (float)mwon/totalm;
+				float l1 = (float)mlose/totalm;
+				printf("Total matches played = %d\n",totalm);
+				printf("Number of matches win = %d\n",mwon);
+				printf("Number of matches lose = %d\n",mlose);
+				if(mwon==0 && mlose==0)
+				{
+					printf("Probablity cannot be calculated since the matches won and lost in this condition are zero\n");
+				}
+				else
+				{
+				printf("Probability of win P(w) = %1.2f\n",w1);
+				printf("Probability of lose P(l) = %1.2f\n",l1);
+		}
+		}
+			
+			
 void function(char Team[50],char stadium[70], char stadium1[70] , char stadium2[70]);
 
 int main()
@@ -28,8 +49,8 @@ int main()
 struct match m[N];
 
 int i;
-
 int j;
+
 
 char Team[50];
 char stadium[70];
@@ -226,19 +247,19 @@ int choose;
 
 printf("Please select all the following conditions:\n");
 printf(" \n");
-printf("Choose one option:\n 1.Toss wins\n 2.Toss looses\n");
+printf("Choose one option:\n 1.Toss win\n 2.Toss lose\n");
 printf("Enter the value : ");
 scanf("%d",&value_1);
 printf(" \n ");
-printf("Choose one option:\n 1.Bat\n 2.Field\n");
+printf("You Toss decision:\n 1.Bat\n 2.Field\n");
 printf("Enter the value : ");
 scanf("%d",&value);
 printf(" \n ");
-printf("Choose one option:\n 1.Home\n 2.Away\n");
+printf("Select Playing Ground:\n 1.Home\n 2.Away\n");
 printf("Enter the value : ");
 scanf("%d",&value1);
 printf(" \n ");
-printf("Choose one option:\n 1.Humid\n 2.Sunny\n 3.Dry\n");
+printf("Select weather condition:\n 1.Humid\n 2.Sunny\n 3.Dry\n");
 printf("Enter the value : ");
 scanf("%d",&value2);
 
@@ -743,127 +764,60 @@ count13 = count13 + 1;
 printf("\n");
 printf("Under following conditions matches are as follow:\n");
 printf("\n");
-if(value_1 == 1){
-	if(value == 1 ){
-		if(value1 == 1){
-			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
-			}
+if(value_1 == 1){ // Toss win toss lose
+	if(value == 1 ){ // bat Field
+		if(value1 == 1){ // stadium decision
+			if(value2 == 1){ //weather
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
+				}
+				
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 		else // Toss winner Bat Away
 		{
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 	}
-	else
+	else // Field
 	{
 		if(value1 == 1){
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 		else // Toss winner Field Away
 		{
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
+			
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 	}
@@ -872,61 +826,29 @@ else if(value_1 = 2){
 		if(value == 1 ){
 		if(value1 == 1){
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
+			
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 		else // Toss loser Bat Away
 		{
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
+			
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 	}
@@ -934,61 +856,29 @@ else if(value_1 = 2){
 	{
 		if(value1 == 1){
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
+			
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 		else // Toss loser Field Away
 		{
 			if(value2 == 1){
-				w1 = (float)count12/count8;
-				l1 = (float)count13/count8;
-				printf("Total matches played = %d\n",count8);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w1);
-				printf("Probability of lose P(l) = %1.2f\n",l1);
+				output(count12,count13,count8); //count12=match win, count13= match lose, count8=total matches
 			}
+			
 			else if(value2 == 2){
-				w2 = (float)count12/count9;
-				l2 = (float)count13/count9;
-				printf("Total matches played = %d\n",count9);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w2);
-				printf("Probability of lose P(l) = %1.2f\n",l2);
+				output(count12,count13,count9); //count12=match win, count13= match lose, count9=total matches
 			}
+			
 			else if(value2 == 3){
-				w3 = (float)count12/count10;
-				l3 = (float)count13/count10;
-				printf("Total matches played = %d\n",count10);
-				printf("Number of matches win = %d\n",count12);
-				printf("Number of matches lose = %d\n",count13);
-				printf("Probability of win P(w) = %1.2f\n",w3);
-				printf("Probability of lose P(l) = %1.2f\n",l3);
+				output(count12,count13,count10); //count12=match win, count13= match lose, count10=total matches
 			}
 		}
 	}	
