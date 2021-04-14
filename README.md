@@ -1,2 +1,0 @@
-IPL also known as Indian Premiere league launched in 2008 by BCCI is a professional Twenty20 cricket league in India. IPL consists of 8 different teams representing 8 different cities in India. Players from all over the world take part in this tournament.
-During the Auction Phase, Players are selected for every team so some situations may arise where the team doesn’t get their desired player as the bid has maxed out the team’s budget for the particular player and there can be a number of situations where this can happen.
